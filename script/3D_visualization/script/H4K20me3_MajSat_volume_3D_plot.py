@@ -3,20 +3,16 @@ from pathlib import Path
 import sys
 sys.path.insert(0, "./")
 import numpy as np
-from scipy.spatial.distance import pdist, squareform
 from scipy.stats import zscore
-import os
-import pickle
 from util import pil_imread
 from mayavi import mlab
 from matplotlib import colors
-import shutil
 from tvtk.api import tvtk
 import configparser
 
 # read in cell information and needed data for plotting
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('H4K20me3_MajSat_volume_config.ini')
 # cell information
 rep = int(config["CellInfo"]["rep"])
 pos = int(config["CellInfo"]["pos"])
@@ -24,12 +20,12 @@ cell_id = int(config["CellInfo"]["cell_id"])
 # data storage pathway
 dot_file = config["DataStorage"]["dot_file"]
 IF_file = config["DataStorage"]["IF_file"]
-mask_file = config["DataStorage"]["mask_file"] 
-annot_file = config["DataStorage"]["annot_file"] 
-input_path = Path(config["DataStorage"]["input_path"]) 
+mask_file = config["DataStorage"]["mask_file"]
+annot_file = config["DataStorage"]["annot_file"]
+input_path = Path(config["DataStorage"]["input_path"])
 
 # preset color for different chromosomes
-color_name = ['#9370db', '#0000c8', '#3c64e6', '#789bf2', '#b0e0e6', '#20b2aa', '#9acd32', '#2e8b57', '#f5e6be', '#deb887', 
+color_name = ['#9370db', '#0000c8', '#3c64e6', '#789bf2', '#b0e0e6', '#20b2aa', '#9acd32', '#2e8b57', '#f5e6be', '#deb887',
               '#ffe100', '#ffa500', '#ff4500', '#b22222', '#ffb6c1', '#ff1493', '#e21f26', '#723b7a', '#295f8a', '#777777']
 # transfer the Hex code to RGB code since Mayavi only take RGB color
 rgba_name = [ np.array(colors.to_rgb(c)) for c in color_name]
