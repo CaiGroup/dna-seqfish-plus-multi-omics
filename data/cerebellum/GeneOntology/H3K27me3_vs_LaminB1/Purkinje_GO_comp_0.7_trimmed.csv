@@ -1,0 +1,5 @@
+sep=;
+"Cluster";"Purkinje";"ID";"Description";"GeneRatio";"BgRatio";"pvalue";"p.adjust";"qvalue";"geneID";"Count"
+"H3K27me3";"H3K27me3";"GO:0004771";"sterol esterase activity";"4/257";"22/22669";0.000100514699185242;0.0249904272681852;0.023448983909657;"Ces1a/Ces1b/Ces1c/Ces1d";4
+"H3K27me3";"H3K27me3";"GO:0001227";"DNA-binding transcription repressor activity, RNA polymerase II-specific";"13/257";"344/22669";0.000164862198349806;0.0249904272681852;0.023448983909657;"Foxp1/Glis3/Hoxa2/Irx1/Irx2/Irx3/Irx4/Irx5/Irx6/Sox6/Tfap2c/Zfhx3/Zfp217";13
+"H3K27me3";"H3K27me3";"GO:0001217";"DNA-binding transcription repressor activity";"13/257";"345/22669";0.000169618284625692;0.0249904272681852;0.023448983909657;"Foxp1/Glis3/Hoxa2/Irx1/Irx2/Irx3/Irx4/Irx5/Irx6/Sox6/Tfap2c/Zfhx3/Zfp217";13

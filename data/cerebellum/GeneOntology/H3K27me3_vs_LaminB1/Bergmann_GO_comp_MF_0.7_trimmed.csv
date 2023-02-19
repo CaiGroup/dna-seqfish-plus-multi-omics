@@ -1,0 +1,11 @@
+sep=;
+"Cluster";"Bergmann";"ID";"Description";"GeneRatio";"BgRatio";"pvalue";"p.adjust";"qvalue";"geneID";"Count"
+"H3K27me3";"H3K27me3";"GO:0043539";"protein serine/threonine kinase activator activity";"9/449";"42/22669";1.08173837901264e-07;5.66830910602625e-05;5.42007861484229e-05;"Ccnk/Cdk5r1/Irgm2/Tcl1/Tcl1b1/Tcl1b2/Tcl1b3/Tcl1b4/Tcl1b5";9
+"H3K27me3";"H3K27me3";"GO:0070566";"adenylyltransferase activity";"7/449";"33/22669";3.12288110210611e-06;0.000818194848751802;0.000782363897159216;"Mocs3/Oas1a/Oas1b/Oas1g/Oas2/Oas3/Papola";7
+"H3K27me3";"H3K27me3";"GO:0003725";"double-stranded RNA binding";"10/449";"85/22669";6.98828947643715e-06;0.00122062122855102;0.00116716694413477;"Oas1a/Oas1b/Oas1c/Oas1d/Oas1e/Oas1f/Oas1g/Oas1h/Oas2/Oas3";10
+"H3K27me3";"H3K27me3";"GO:0030550";"acetylcholine receptor inhibitor activity";"4/449";"15/22669";0.000174299155922664;0.0103791116409984;0.0099245824449884;"Ly6a/Ly6e/Ly6i/Ly6m";4
+"H3K27me3";"H3K27me3";"GO:0001227";"DNA-binding transcription repressor activity, RNA polymerase II-specific";"18/449";"344/22669";0.000192509382639112;0.0103791116409984;0.0099245824449884;"Ascl2/Emx2/Hand1/Hes2/Hes3/Hes5/Hoxb13/Hoxb8/Hoxd9/Ikzf5/Ppara/Sall1/Tbx3/Tfap2c/Vax1/Yy1/Zfp217/Zfp692";18
+"H3K27me3";"H3K27me3";"GO:0001217";"DNA-binding transcription repressor activity";"18/449";"345/22669";0.000199479870293066;0.0103791116409984;0.0099245824449884;"Ascl2/Emx2/Hand1/Hes2/Hes3/Hes5/Hoxb13/Hoxb8/Hoxd9/Ikzf5/Ppara/Sall1/Tbx3/Tfap2c/Vax1/Yy1/Zfp217/Zfp692";18
+"H3K27me3";"H3K27me3";"GO:0008009";"chemokine activity";"6/449";"44/22669";0.000217882114601111;0.0103791116409984;0.0099245824449884;"Ccl1/Ccl11/Ccl12/Ccl2/Ccl7/Ccl8";6
+"H3K27me3";"H3K27me3";"GO:0048020";"CCR chemokine receptor binding";"6/449";"56/22669";0.000820736195588472;0.0358388138740299;0.0342693358859748;"Ccl1/Ccl11/Ccl12/Ccl2/Ccl7/Ccl8";6
+"LaminB1";"LaminB1";"GO:0005549";"odorant binding";"9/83";"493/22669";7.98909646127697e-05;0.00679073199208543;0.00647537292124555;"Olfr1104/Olfr1105/Olfr1106/Olfr1107/Olfr1109/Olfr1110/Olfr1111/Olfr259/Vmn1r89";9

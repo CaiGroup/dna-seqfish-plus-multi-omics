@@ -1,0 +1,13 @@
+sep=;
+"Cluster";"Purkinje";"ID";"Description";"GeneRatio";"BgRatio";"pvalue";"p.adjust";"qvalue";"geneID";"Count"
+"H3K27me3";"H3K27me3";"GO:0005667";"transcription regulator complex";"18/259";"460/23271";4.53286501919132e-06;0.00140065529093012;0.00129783082654741;"Atf7ip/Hoxa10/Hoxa11/Hoxa9/Irx4/Jazf1/Pax1/Pax3/Rfx3/Six2/Six3/Sox6/Sox9/Tcf4/Tcf7l2/Tead1/Wwox/Zfhx3";18
+"LaminB1";"LaminB1";"GO:0099699";"integral component of synaptic membrane";"6/125";"226/23271";0.00140996592497826;0.0486563799869076;0.0439330121051376;"Cdh2/Clcn3/Gpm6a/Lrrc4c/Nlgn1/Scn1a";6
+"LaminB1";"LaminB1";"GO:0000782";"telomere cap complex";"2/125";"11/23271";0.00152513136041644;0.0486563799869076;0.0439330121051376;"Pot1a/Pot1b";2
+"LaminB1";"LaminB1";"GO:0000783";"nuclear telomere cap complex";"2/125";"11/23271";0.00152513136041644;0.0486563799869076;0.0439330121051376;"Pot1a/Pot1b";2
+"LaminB1";"LaminB1";"GO:0005583";"fibrillar collagen trimer";"2/125";"11/23271";0.00152513136041644;0.0486563799869076;0.0439330121051376;"Col3a1/Col5a2";2
+"LaminB1";"LaminB1";"GO:0098643";"banded collagen fibril";"2/125";"11/23271";0.00152513136041644;0.0486563799869076;0.0439330121051376;"Col3a1/Col5a2";2
+"LaminB1";"LaminB1";"GO:0140445";"chromosome, telomeric repeat region";"2/125";"11/23271";0.00152513136041644;0.0486563799869076;0.0439330121051376;"Pot1a/Pot1b";2
+"LaminB1";"LaminB1";"GO:0036156";"inner dynein arm";"2/125";"12/23271";0.0018237320327365;0.0486563799869076;0.0439330121051376;"Dnah7b/Dnah7c";2
+"LaminB1";"LaminB1";"GO:0005635";"nuclear envelope";"8/125";"421/23271";0.00200513620300852;0.0486563799869076;0.0439330121051376;"Bcl2/Epha3/Fancl/Lypla1/Rasa1/Stau2/Ugt2b5/Vrk2";8
+"LaminB1";"LaminB1";"GO:0099240";"intrinsic component of synaptic membrane";"6/125";"244/23271";0.00207597324998587;0.0486563799869076;0.0439330121051376;"Cdh2/Clcn3/Gpm6a/Lrrc4c/Nlgn1/Scn1a";6
+"LaminB1";"LaminB1";"GO:0031965";"nuclear membrane";"6/125";"246/23271";0.00216250577719589;0.0486563799869076;0.0439330121051376;"Bcl2/Epha3/Lypla1/Rasa1/Stau2/Ugt2b5";6
