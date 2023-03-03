@@ -1,0 +1,16 @@
+experiments: ["E14_rep2_replicate1", "E14_rep3_replicate2", "E14_mDuxCa_wo", "E14_mDuxCA_24hr_rep1", "E14_mDuxCA_24hr_rep2", "NMuMG_rep1"]
+clustered_experiments: ["E14_mDuxCa_wo", "E14_mDuxCA_24hr_rep1", "E14_mDuxCA_24hr_rep2"]
+clusters: [0,1,2]
+brain_proximity_search_radii_nm: [500, 1000]
+
+experiment_positions: 
+  E14_rep2_replicate1: [0,1,2,3,4,5,6,7,8,9,10]
+  E14_rep3_replicate2: [0,1,2,3,4,5,6,7,8,9,10,11]
+  E14_mDuxCa_wo: [1,2,3,4,5,6,7,8,9,10,11]
+  E14_mDuxCA_24hr_rep1: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+  E14_mDuxCA_24hr_rep2: [0,1,2,3,4,5,6,7,8,9,10,11]
+  NMuMG_rep1: [0,1,2,3,4,5,6,7,8,9]
+  Brain_rep1: [0,1,2]
+  Brain_rep2: [0,1,2,3]
+
+cois: ["chr1","chr2","chr3","chr4","chr5","chr6","chr7","chr8","chr9","chr10","chr11","chr12","chr13","chr14","chr15","chr16","chr17","chr18","chr19","chrX"]

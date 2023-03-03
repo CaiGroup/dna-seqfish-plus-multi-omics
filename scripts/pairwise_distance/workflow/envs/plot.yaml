@@ -1,0 +1,9 @@
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - pandas
+  - numpy
+  - matplotlib
+  - scipy
+  - scikit-image

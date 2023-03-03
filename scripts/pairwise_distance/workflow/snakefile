@@ -1,0 +1,151 @@
+configfile: "config/config.yaml"
+
+wildcard_constraints:
+    coi="chr\d*X*",
+    r="\d+"
+
+
+rule target:
+    input:
+        expand("results/plots/prox_freq_{experiment}_{coi}.png", experiment=config["experiments"], coi=config["cois"]),
+        expand("results/plots/mean_dists_{experiment}_{coi}.png", experiment=config["experiments"] + ["E14_rep1&2"], coi=config["cois"]),
+        expand("results/plots/mean_dists_{experiment}_{coi}.png", experiment=["E14_rep1&2"], coi=config["cois"]),
+        expand("results/plots/prox_freq_binned_{experiment}_{coi}.png", experiment=config["experiments"], coi=config["cois"]),
+        expand("results/plots/mean_dists_binned_{experiment}_{coi}.png", experiment=config["experiments"] + ["E14_rep1&2"], coi=config["cois"]),
+        expand("results/plots/mean_dists_binned_{experiment}_{coi}.png", experiment=["E14_rep1&2"], coi=config["cois"]),
+        expand("results/plots/mean_dists_paint_binned_{experiment}_{coi}.png", experiment=config["experiments"] + ["E14_rep1&2"], coi=config["cois"]),
+        expand("results/plots/mean_dists_{experiment}_{coi}_cluster{cluster}.png", experiment=config["clustered_experiments"], coi=config["cois"], cluster=config["clusters"]),
+        expand("results/plots/mean_dists_{experiment}_{coi}_cluster{cluster}.png", experiment=["Brain_rep1","Brain_rep2","Brain_rep1&2"], coi=config["cois"], cluster=[2,4,7,"6&11"]),
+        expand("results/plots/mean_dists_binned_{experiment}_{coi}_cluster{cluster}.png", experiment=["Brain_rep1","Brain_rep2","Brain_rep1&2"], coi=config["cois"], cluster=[2,4,7,"6&11"]),
+        expand("results/plots/mean_dists_binned_{experiment}_{coi}_cluster{cluster}.png", experiment=["Brain_rep1","Brain_rep2","Brain_rep1&2"], coi=config["cois"], cluster=[2,4,7,"6&11"]),
+        expand("results/mean_outputs/exp_Brain_rep{rep}_mean_dists_{coi}_cluster{cluster}.png", rep=[1,2,"1&2"], coi=config["cois"], cluster=[2,4,7,"6&11"]),
+        expand("results/plots/mean_dists_binned_{experiment}_all_chrm.png", experiment=config["experiments"]),
+        expand("results/plots/mean_dists_binned_{experiment}_all_chrm.png", experiment=["E14_mDuxCa_wo", "E14_rep2_replicate1", "E14_rep3_replicate2", "NMuMG_rep1"]), #band aid
+        expand("results/plots/mean_dists_paint_binned_{experiment}_all_chrm.png", experiment=config["experiments"]  + ["E14_rep1&2"]),
+        "results/plots/mean_dists_paint_binned_E14_rep1&2_all_chrm.png",
+        "results/plots/mean_dists_binned_E14_rep1&2_all_chrm.png",
+        expand("results/plots/mean_dists_binned_{experiment}_all_chrm_cluster{cluster}.png", experiment=config["clustered_experiments"], cluster=config["clusters"]),
+        expand("results/plots/mean_dists_paint_binned_{experiment}_all_chrm_cluster{cluster}.png", experiment=config["clustered_experiments"], cluster=config["clusters"]),
+        expand("results/mean_outputs_binned/exp_Brain_rep{rep}_mean_dists_{coi}_cluster{cluster}.png", rep=[1,2,"1&2"], coi=config["cois"], cluster=[2,4,7,"6&11"]),
+        expand("results/mean_outputs_paint_binned/exp_Brain_rep{rep}_mean_dists_{coi}_cluster{cluster}.png", rep=[1,2,"1&2"], coi=config["cois"], cluster=[2,4,7,"6&11"]),
+        expand("results/plots/mean_dists_binned_{experiment}_{coi}_cluster{cluster}.png", experiment=["Brain_rep1","Brain_rep2","Brain_rep1&2"], coi=config["cois"], cluster=[2,4,7,"6&11"]),
+        expand("results/plots/mean_dists_binned_{experiment}_all_chrm_cluster{cluster}.png", experiment=["Brain_rep1","Brain_rep2","Brain_rep1&2"], cluster=[2,4,7,"6&11"]),
+        expand("results/plots/mean_dists_paint_binned_{experiment}_all_chrm_cluster{cluster}.png", experiment=["Brain_rep1","Brain_rep2","Brain_rep1&2"], cluster=[2,4,7,"6&11"]),
+        expand("results/plots/prox_freq_{experiment}_{coi}_r{r}_cluster{cluster}.png", experiment=["Brain_rep1","Brain_rep2","Brain_rep1&2"], coi=config["cois"], cluster=[2,4,7,"6&11"], r=config["brain_proximity_search_radii_nm"]),
+        expand("results/plots/prox_freq_binned_{experiment}_{coi}_r{r}_cluster{cluster}.png", experiment=["Brain_rep1","Brain_rep2","Brain_rep1&2"], coi=config["cois"], cluster=[2,4,7,"6&11"], r=config["brain_proximity_search_radii_nm"]),
+        "results/plots/exp_E14_rep1&2_all_inter_chrm_mean.png",
+        expand("results/plots/exp_brain_rep1&2_all_inter_chrm_mean_cluster{cluster}.png", cluster=[2,4,7,"6&11"]),
+        "results/all_inter_chrm_mean_dists/exp_E14_rep1&2_all_inter_chrm_binned_mean.csv",
+	expand("results/prox_freq_outputs_binned/exp_{experiment}_prox_counts_all.png", experiment=config["experiments"][1]),
+        expand("results/prox_freq_outputs_binned/exp_{experiment}_ncoocur_all.png", experiment=config["experiments"][1])
+        expand("results/prox_freq_outputs_paint_binned/exp_{experiment}_prox_counts_all.png", experiment=config["experiments"]),
+        expand("results/prox_freq_outputs_paint_binned/exp_{experiment}_ncoocur_all.png", experiment=config["experiments"]),
+        "results/prox_freq_outputs_paint_binned/exp_E14_rep1&2_prox_counts_all.png",
+        "results/prox_freq_outputs_paint_binned/exp_E14_rep1&2_ncoocur_all.png",
+        expand("results/plots/prox_freq_E14_rep1&2_{coi}.png", coi=config["cois"])
+
+include: "rules/brain_single_reps.smk"
+include: "rules/brain_combined_reps.smk"
+include: "rules/ES_cell_experiments.smk"
+include: "rules/plot_results.smk"
+include: "rules/bin.smk"
+
+
+
+rule get_pw_mean_dists_E14_rep1_rep2:
+    input:
+        expand("resources/filtered_renumbered_dots/E14_rep2_replicate1_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep2_replicate1"]),
+        expand("resources/filtered_renumbered_dots/E14_rep3_replicate2_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep3_replicate2"]),
+    output: "results/mean_outputs/exp_E14_rep1&2_mean_dists_{coi}.png"#, "results/mean_outputs/epp_E14_rep1&2_nsums_{coi}.png"
+    resources: mem_mb = 30000
+    script: "scripts/calc_mean_dists_strands_coi.jl"
+
+
+rule get_binned_pw_mean_dists_E14_rep1_rep2:
+    input:
+        expand("results/filtered_renumbered_dots_binned/E14_rep2_replicate1_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep2_replicate1"]),
+        expand("results/filtered_renumbered_dots_binned/E14_rep3_replicate2_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep3_replicate2"]),
+    output: "results/mean_outputs_binned/exp_E14_rep1&2_mean_dists_{coi}.png"#, "results/mean_outputs/epp_E14_rep1&2_nsums_{coi}.png"
+    resources: mem_mb = 30000
+    script: "scripts/calc_mean_dists_strands_coi.jl"
+
+rule get_paint_binned_pw_mean_dists_E14_rep1_rep2:
+    input:
+        expand("results/filtered_renumbered_dots_paint_binned/E14_rep2_replicate1_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep2_replicate1"]),
+        expand("results/filtered_renumbered_dots_paint_binned/E14_rep3_replicate2_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep3_replicate2"]),
+    output: "results/mean_outputs_paint_binned/exp_E14_rep1&2_mean_dists_{coi}.png"#, "results/mean_outputs/epp_E14_rep1&2_nsums_{coi}.png"
+    resources: mem_mb = 30000
+    script: "scripts/calc_mean_dists_strands_coi.jl"
+
+rule get_binned_all_inter_chrm_dists_E14_rep1_rep2:
+    input:
+        expand("results/filtered_renumbered_dots_binned/E14_rep2_replicate1_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep2_replicate1"]),
+        expand("results/filtered_renumbered_dots_binned/E14_rep3_replicate2_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep3_replicate2"]),
+    output: "results/all_inter_chrm_mean_dists/exp_E14_rep1&2_mean_dists_{coi}.png"#, "results/mean_outputs/epp_E14_rep1&2_nsums_{coi}.png"
+    resources: mem_mb = 30000
+    script: "scripts/calc_mean_dists_strands_coi.jl"
+
+rule get_paint_binned_all_inter_chrm_dists_E14_rep1_rep2:
+    input:
+        expand("results/filtered_renumbered_dots_paint_binned/E14_rep2_replicate1_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep2_replicate1"]),
+        expand("results/filtered_renumbered_dots_paint_binned/E14_rep3_replicate2_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep3_replicate2"]),
+    output: "results/all_inter_chrm_mean_dists/exp_E14_rep1&2_mean_dists_{coi}.png"#, "results/mean_outputs/epp_E14_rep1&2_nsums_{coi}.png"
+    resources: mem_mb = 30000
+    script: "scripts/calc_mean_dists_strands_coi.jl"
+
+rule get_ave_inter_chrm_dists:
+    input:
+        "results/mean_outputs_binned/exp_Brain_rep1&2_mean_dists_all_chrm_cluster2.png",
+        "results/prox_freq_outputs_binned/exp_Brain_rep1&2_ncoocur_{coi}_r{r}_cluster{cluster}.png"
+    output:
+        "results/inter_chrom_ave_"
+
+
+#"results/prox_freq_outputs_binned/exp_"+experiment+"_prox_counts_all.png", "results/prox_freq_outputs/exp_"+experiment+"_ncoocur_all.png"
+
+
+rule get_all_interchrm_dists_Brain_rep1_rep2:
+    input:
+        "resources/cerebellum_nuc_vol_filtered_rep1+2_stats.csv",
+        expand("resources/cerebellum/Brain_rep1_pos_{pos}_radial_scores_wofilter.csv", pos=config["experiment_positions"]["Brain_rep1"]),
+        expand("resources/cerebellum/Brain_rep2_pos_{pos}_radial_scores_wofilter.csv", pos=config["experiment_positions"]["Brain_rep2"])
+    output:
+        "results/all_inter_chrm_mean_dists/exp_brain_rep1&2_all_inter_chrm_cluster2.csv",
+        "results/all_inter_chrm_mean_dists/exp_brain_rep1&2_all_inter_chrm_cluster4.csv",
+        "results/all_inter_chrm_mean_dists/exp_brain_rep1&2_all_inter_chrm_cluster7.csv",
+        "results/all_inter_chrm_mean_dists/exp_brain_rep1&2_all_inter_chrm_cluster6&11.csv",
+    resources: mem_mb = 20000
+    script: "scripts/calc_brain_all_inter_chrm_mean_dists.jl"
+
+
+rule get_all_interchrm_dists_E14_rep1_rep2:
+    input:
+        expand("resources/filtered_renumbered_dots/E14_rep2_replicate1_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep2_replicate1"]),
+        expand("resources/filtered_renumbered_dots/E14_rep3_replicate2_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep3_replicate2"]),
+    output: 
+        "results/all_inter_chrm_mean_dists/exp_E14_rep1&2_all_inter_chrm_mean.csv"
+    resources: mem_mb = 5000
+    script: "scripts/calc_ES_all_inter_chrm_mean_dists.jl"
+
+
+rule plot_all_inter_chrm_dists_E14:
+    input: "results/all_inter_chrm_mean_dists/exp_E14_rep1&2_all_inter_chrm_mean.csv"
+    output: "results/plots/exp_E14_rep1&2_all_inter_chrm_mean.png"
+    resources: mem_mb=20
+    script: "scripts/plot_inter_chrm_mean_dists.py"
+
+rule plot_all_inter_chrm_dists_brain:
+    input: "results/all_inter_chrm_mean_dists/exp_brain_rep1&2_all_inter_chrm_cluster{cluster}.csv"
+    output: "results/plots/exp_brain_rep1&2_all_inter_chrm_mean_cluster{cluster}.png"
+    resources: mem_mb=20
+    script: "scripts/plot_inter_chrm_mean_dists.py"
+
+rule get_all_chrm_mean_inter_dist_binned:
+    input:
+        expand("resources/filtered_renumbered_dots/E14_rep2_replicate1_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep2_replicate1"]),
+        expand("resources/filtered_renumbered_dots/E14_rep3_replicate2_pos_{pos}_filtered_renumbered.csv", pos=config["experiment_positions"]["E14_rep3_replicate2"]),
+    output:
+        "results/all_inter_chrm_mean_dists/exp_E14_rep1&2_all_inter_chrm_binned_mean.csv"
+    resources: mem_mb = 5000
+    threads: 20
+    script: "scripts/calc_mean_binned_inter_chrm_dists_all_reps.jl"
