@@ -21,7 +21,7 @@ Process raw images from Two-layer DNASeqFISH experiment, together with mRNA and 
 > ### Dependencies:
 > 1.Matlab (R2019a)
 > <br>
-> 2.Fiji installed ()
+> 2.Fiji installed
 > ### Requirements:
 > 
 > 
