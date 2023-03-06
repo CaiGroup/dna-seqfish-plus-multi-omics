@@ -24,7 +24,7 @@ Process raw images from DNA seqFISH+ experiment, together with RNAseqFISH and se
 > 2.Fiji installed
 > 
 > <br>
-> 
+> This pipeline is built upon previous image processing pipeline (https://github.com/CaiGroup/dna-seqfish-plus-tissue).
 
 ***
 ## Pairwise distance calculation
