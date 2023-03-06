@@ -20,9 +20,7 @@ This repository contains experimental materials, scripts for imaging processing 
 Process raw images from DNA seqFISH+ experiment, together with RNAseqFISH and sequential immunofluorescence images.
 > ### Dependencies:
 > 1.Matlab (R2019a)
-> <br>
 > 2.Fiji installed
-> 
 > <br>
 > This pipeline is built upon previous image processing pipeline (https://github.com/CaiGroup/dna-seqfish-plus-tissue).
 
