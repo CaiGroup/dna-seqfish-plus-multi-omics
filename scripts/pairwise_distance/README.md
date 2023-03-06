@@ -1,6 +1,6 @@
-# Two-layer DNASeqFISH+ pairwise_maps
+# DNA seqFISH+ pairwise_maps
 
-This workflow calculates pairwise distance maps from tables of chromosome separation Two-layer DNASeqFISH+ loci.
+This workflow calculates pairwise distance maps from tables of chromosome separation for DNA seqFISH+ loci.
 
 ## Installing packages
 
