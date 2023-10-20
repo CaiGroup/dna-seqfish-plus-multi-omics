@@ -4,6 +4,7 @@ DNA seqFISH+ is a method for high-resolution, multi-omics profiling in cell cult
 <br>
 This repository contains experimental materials, scripts for imaging processing and downstream analysis.
 ***
+![Purkinje cell](https://github.com/CaiGroup/dna-seqfish-plus-multi-omics/blob/main/Icon/output.gif)
 # Organization to get start
 | Directory | Subdirectory               | Contents                                                                                                  |
 |-----------|----------------------------|-----------------------------------------------------------------------------------------------------------|
@@ -48,8 +49,3 @@ Free for non-commercial and academic research. The software is bound by the lice
 
 ## Contact
 * Contact the corresponding authors: Long Cai (lcai@caltech.edu) or Yodai Takei (ytakei@caltech.edu) for any inquiry.
-
-
-
-
-
