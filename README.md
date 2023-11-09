@@ -11,7 +11,7 @@ This repository contains experimental materials, scripts for imaging processing 
 |-----------|----------------------------|-----------------------------------------------------------------------------------------------------------|
 | data      | experimental-resources     | Probe sequences, barcoding scheme and antibody information                                                |
 | data      | annotation                 | Gene annotation, sequence features of DNA locus at different resolutions                                  |
-| data      | CellCulcure and cerebellum | Processed ensemble and single cell level data together with resource data for figures in this paper       |
+| data      | CellCulture and cerebellum | Processed ensemble and single cell level data together with resource data for figures in this paper       |
 | scripts   | image_processing           | Code used for imaging preprocessing, image alignment, dot calling and decoding (Matlab and Python)        |
 | scripts   | homologous chromosome separation| Code used for separating loci from homologous chromosomes.                                            |
 | scripts   | pairwise_distance          | Scripts for calculating physical distance between detected DNA locus (Julia and Python)                   |
