@@ -13,6 +13,7 @@ This repository contains experimental materials, scripts for imaging processing 
 | data      | annotation                 | Gene annotation, sequence features of DNA locus at different resolutions                                  |
 | data      | CellCulcure and cerebellum | Processed ensemble and single cell level data together with resource data for figures in this paper       |
 | scripts   | image_processing           | Code used for imaging preprocessing, image alignment, dot calling and decoding (Matlab and Python)        |
+| scripts   | homologous chromosome separ| Code used for separating loci from homologous chromosomes.                                            |
 | scripts   | pairwise_distance          | Scripts for calculating physical distance between detected DNA locus (Julia and Python)                   |
 | scripts   | 3D_visualization           | Code and test dataset used for 3D visualization of chromosomes and subcompartment reconstruction (Python) |
 | scripts   | downstream_analysis        | Code for downstream analysis (Python)                                                                     |
@@ -26,6 +27,16 @@ Process raw images from DNA seqFISH+ experiment, together with RNAseqFISH and se
 > 3. Fiji installed
 > <br>
 > This pipeline is built upon previous image processing pipeline (https://github.com/CaiGroup/dna-seqfish-plus-tissue).
+
+***
+## Homologous Chromosome seperation
+Input physical coordinates of DNA locus after homologous chromosome separation, output ensemble level pairwise distance of genomic bins in selected resolution.
+> ### Dependencies:
+> 1. Julia
+> 2. [DNASeqFISHChromosomeAssignment.jl](https://github.com/CaiGroup/DNASeqFISHChromosomeAssignment.jl)
+> 3. Snakemake
+> <br>
+>Usage refer to readme document under homologous chromosome separation folder folder
 
 ***
 ## Pairwise distance calculation
