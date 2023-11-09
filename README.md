@@ -30,7 +30,7 @@ Process raw images from DNA seqFISH+ experiment, together with RNAseqFISH and se
 
 ***
 ## Homologous Chromosome seperation
-Input physical coordinates of DNA locus after homologous chromosome separation, output ensemble level pairwise distance of genomic bins in selected resolution.
+Input genomic and spatial coordinates of DNA loci, output homologous chromosome copy that each locus is predicted to belong to.
 > ### Dependencies:
 > 1. Julia
 > 2. [DNASeqFISHChromosomeAssignment.jl](https://github.com/CaiGroup/DNASeqFISHChromosomeAssignment.jl)
