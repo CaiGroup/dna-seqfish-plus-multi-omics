@@ -4,14 +4,12 @@ This repository separates different copies of the same chromosome from DNASeqFIS
 
 ## Installation
 
-On the HPC, install the latest version of DNASeqFISHChromsomeAssignment.jl and other necessary julia packages using the commands
+Install the latest version of DNASeqFISHChromsomeAssignment.jl and other necessary julia packages using the commands
 
 ```
-cd groups/CaiLab/personal/jonathan/packages/DNASeqFISHChromosomeAssignment
-module load julia/1.6.2
 julia
 julia> ]
-pkg>dev .
+pkg> add https://github.com/CaiGroup/DNASeqFISHChromosomeAssignment.jl
 pkg> add DataFrames
 pkg> add CSV
 pkg> add GLPK
