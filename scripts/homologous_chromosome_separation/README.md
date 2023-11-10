@@ -1,6 +1,6 @@
 # DNA SeqFISH Chromosome Allele Separation Workflow
 
-This repository separates different copies of the same chromosome from DNASeqFISH data into alleles using [DNASeqFISHChromsomeAssignment.jl](https://github.com/CaiGroup/DNASeqFISHChromosomeAssignment).
+This folder contains a workflow to separate different copies of the same chromosome for cells from each experiment using [DNASeqFISHChromsomeAssignment.jl](https://github.com/CaiGroup/DNASeqFISHChromosomeAssignment).
 
 ## Installation
 
@@ -26,11 +26,7 @@ conda activate snakemake
 
 ## Set up
 
-If using on the Caltech HPC, first run the `make_softlinks.sh` script to make softlinks to the datafiles to chromosome copy numbers to using the command
-
-```
-bash make_softlinks.sh
-```
+In the home folder of the workflow, place folders containing genomic and spatial coordinates of genomic data from each experiment with names and paths according to the input templates in the rules of the snakefile.
 
 In the snakefile, you can adjust the parameters for different datasets.
 
@@ -50,7 +46,7 @@ To check what files the snakemake needs to process, run
 snakemake -n
 ```
 
-To start the workflow on the HPC, run
+To start the workflow on a slurm cluster, run
 
 ```
 sbatch run-slurm.sh
