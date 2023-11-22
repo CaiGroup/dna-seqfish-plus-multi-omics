@@ -1,0 +1,66 @@
+rule target:
+    input:
+        expand("results/E14_rep2_replicate1_pos_{pos}.csv", pos=list(range(11))),
+        expand("results/E14_rep3_replicate2_pos_{pos}.csv", pos=list(range(12))),
+        expand("results/Brain_rep1_pos_{pos}.csv", pos=list(range(3))),
+        expand("results/Brain_rep2_pos_{pos}.csv", pos=list(range(4))),
+        expand("results/NMuMG_rep1_pos_{pos}.csv", pos=list(range(10))),
+        expand("results/E14_mDuxCa_wo_pos_{pos}.csv", pos=list(range(11))),
+        expand("results/E14_mDuxCA_24hr_rep1_pos_{pos}.csv", pos=list(range(15))),
+        expand("results/E14_mDuxCA_24hr_rep2_pos_{pos}.csv", pos=list(range(12)))
+
+rule E14_rep2_replicate1:
+    input: "data/E14_rep2_replicate1/LC1-100k-001-012-2021-07-06-E14-100k-rep2-output-finalpoints-paints-decoded-onoff-chAll-pos{pos}.csv"
+    params: r_dbscan=500, r_ldp=700, s=250, min_size=30, r_ldp_nbr=500, unique_prop_thresh=0.9, dbscan_min_nbrs=12
+    output: "results/E14_rep2_replicate1_pos_{pos}.csv"
+    resources: mem_mb=5000
+    script: "sep_chrms.jl"
+
+rule E14_rep3_replicate2:
+    input: "data/E14_rep3_replicate2/CAILAB-100k-001-007-2021-04-07-E14-100k-rep3-output-finalpoints-paints-decoded-onoff-chAll-pos{pos}.csv"
+    params: r_dbscan=450, r_ldp=750, s=250, min_size=30, r_ldp_nbr=500, unique_prop_thresh=0.9, dbscan_min_nbrs=12
+    output: "results/E14_rep3_replicate2_pos_{pos}.csv"
+    resources: mem_mb=5000
+    script: "sep_chrms.jl"
+
+rule Brain_rep1:
+    input: "data/Brain_rep1/LC1-100k-002-002-2021-07-17-cerebellum-100k-rep1-output-finalpoints-paints-decoded-onoff-chAll-pos{pos}.csv"
+    params:r_dbscan=500, r_ldp=700, s=250, min_size=30, r_ldp_nbr=500, unique_prop_thresh=0.9, dbscan_min_nbrs=12
+    output: "results/Brain_rep1_pos_{pos}.csv"
+    resources: mem_mb=5000
+    script: "sep_chrms.jl"
+
+rule Brain_rep2:
+    input: "data/Brain_rep2/CAILAB-100k-003-002-2021-06-04-cerebellum-DNAfull-rep2-output-finalpoints-paints-decoded-onoff-chAll-pos{pos}.csv"
+    params: r_dbscan=500, r_ldp=700, s=250, min_size=30, r_ldp_nbr=500, unique_prop_thresh=0.9, dbscan_min_nbrs=12
+    output: "results/Brain_rep2_pos_{pos}.csv"
+    resources: mem_mb=5000
+    script: "sep_chrms.jl"
+
+rule NMuMG_rep1:
+    input: "data/NMuMG_rep1/CAILAB-100k-002-007-NMuMG-100k-rep1-output-finalpoints-paints-decoded-onoff-chAll-pos{pos}.csv"
+    params: r_dbscan=450, r_ldp=750, s=250, min_size=30, r_ldp_nbr=500, unique_prop_thresh=0.9, dbscan_min_nbrs=12
+    output: "results/NMuMG_rep1_pos_{pos}.csv"
+    resources: mem_mb=5000
+    script: "sep_chrms.jl"
+
+rule E14_mDuxCa_wo:
+    input: "data/E14_mDuxCA_wo/LC1-100k-003-007-2021-04-24-E14mDuxCA4-wo-100k-rep1-output-finalpoints-paints-decoded-onoff-chAll-pos{pos}.csv"
+    params:r_dbscan=500, r_ldp=700, s=250, min_size=30, r_ldp_nbr=500, unique_prop_thresh=0.9, dbscan_min_nbrs=12
+    output: "results/E14_mDuxCa_wo_pos_{pos}.csv"
+    resources: mem_mb=5000
+    script: "sep_chrms.jl"
+
+rule E14_mDuxCA_24hr_rep1:
+    input: "data/E14_mDuxCA_24hr_rep1/CAILAB-100k-004-007-E14mDuxCA4-24hr-rep1-output-finalpoints-paints-decoded-onoff-chAll-pos{pos}.csv"
+    params: r_dbscan=500, r_ldp=700, s=250, min_size=30, r_ldp_nbr=500, unique_prop_thresh=0.9, dbscan_min_nbrs=12
+    output: "results/E14_mDuxCA_24hr_rep1_pos_{pos}.csv"
+    resources: mem_mb=5000
+    script: "sep_chrms.jl"
+
+rule E14_mDuxCA_24hr_rep2:
+    input: "data/E14_mDuxCA_24hr_rep2/CAILAB-100k-005-007-E14mDuxCA4-24hr-rep2-output-finalpoints-paints-decoded-onoff-chAll-pos{pos}.csv"
+    params: r_dbscan=500, r_ldp=700, s=250, min_size=30, r_ldp_nbr=500, unique_prop_thresh=0.9, dbscan_min_nbrs=12
+    output: "results/E14_mDuxCA_24hr_rep2_pos_{pos}.csv"
+    resources: mem_mb=5000
+    script: "sep_chrms.jl"
