@@ -4,7 +4,7 @@ DNA seqFISH+ is a method for high-resolution, multi-omics profiling in cell cult
 <br>
 This repository contains experimental materials, scripts for imaging processing and downstream analysis.
 ***
-![Animation](https://github.com/CaiGroup/dna-seqfish-plus-multi-omics/blob/9a77bbcf752f0959a2ddbae592427fdc357df53e/Icon/H4K20me3_animation.gif)
+![Animation](https://github.com/CaiGroup/dna-seqfish-plus-multi-omics/blob/9a77bbcf752f0959a2ddbae592427fdc357df53e/Icon/icon.gif)
 
 # Organization to get start
 | Directory | Subdirectory                    | Contents                                                                                                  |
