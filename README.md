@@ -18,6 +18,8 @@ This repository contains experimental materials, scripts for imaging processing 
 | scripts   | pairwise_distance               | Scripts for calculating physical distance between detected DNA locus (Julia and Python)                   |
 | scripts   | 3D_visualization                | Code and test dataset used for 3D visualization of chromosomes and subcompartment reconstruction (Python) |
 | scripts   | downstream_analysis             | Code for downstream analysis (Python)                                                                     |
+| scripts   | supplementary_notes             | Code for parallel distance computation for cell culture and cerebellum data, gamma correction and etc. used in supplementary notes for clarifying block effect(Python)                                                            |
+
 
 ***
 ## Image processing
